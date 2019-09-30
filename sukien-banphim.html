@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body onload="docReady()">
+<img id ="nobita" src = "nobita.jpg" style ="poisition:absolute; left : 0; top : 0;"height="200" width="160"/>
+
+<script>
+function lentrenanhoi(){
+    let element = document.getElementById("nobita");
+    element.style.top = parseInt(element.style.top) -5 + 'px';
+}
+function xuongnaoanhoi() {
+    let element = document.getElementById("nobita");
+    element.style.top = parseInt(element.style.top) + 5 + 'px';
+}
+function sangtraianhoi() {
+    let element = document.getElementById("nobita");
+    element.style.left = parseInt(element.style.left) -5 + 'px';
+}
+function sangphaianhoi() {
+    let element = document.getElementById("nobita");
+    element.style.left = parseInt(element.style.left) +5 +'px';
+}
+function moveSelection(evt) {
+    switch (evt.keyCode) {
+        case 37:
+            lentrenanhoi();
+            break;
+        case 39:
+            xuongnaoanhoi();
+            break;
+        case 38:
+            sangtraianhoi();
+            break;
+        case 40:
+            sangphaianhoi();
+            break;
+    }
+}
+function docReady() {
+   window.addEventListener('keydow', moveSelection);
+}
+</script>
+</body>
+</html>
